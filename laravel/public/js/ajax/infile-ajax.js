@@ -1,6 +1,11 @@
 // initialize variables
 let MYAPP = {};
 let i = 0;
+let bodyF1 = document.querySelector('body');
+let loginWindow1 = document.querySelector('.login');
+let submitB1 = document.querySelector('#ajax-submit-infile-comments');
+let formDis1 = document.querySelector('#comments-form-infile'); 
+let inputText1 = document.querySelector('#ajax-textarea-infile-comments');
 
 class Getter 
 {
@@ -100,3 +105,36 @@ function getImages() {
 // start code
 
 getNewCars();
+
+
+
+// comment form sender
+
+$(function() {
+      $('#comments-form-infile').submit(function(e) {
+        var $form = $(this);
+        $.ajax({
+          type: $form.attr('method'),
+          url: $form.attr('action'),
+          data: $form.serialize()
+        }).done(function(response) {
+          console.log(response);
+          if (response == 'not-auth') {
+              closeMobileMenu();
+              bodyF1.style.overflow = 'hidden';
+              loginWindow1.style.display = "flex";
+          } 
+          if (response == 1) {
+
+            document.querySelector('#ajax-textarea-infile-comments').value = '';
+            submitB1.classList.add('disabled');
+            formDis1.setAttribute('disabled', '');
+            inputText1.style.height = '61px';
+          }
+        }).fail(function(response) {
+          console.log(response);
+        });
+        //отмена действия по умолчанию для кнопки submit
+        e.preventDefault(); 
+      });
+});

@@ -10,6 +10,7 @@
 	use ArrayOp;
 	use SearchOp;
 	use GetDate;
+	use commentNew;
 
 	/**
 	 *  Do ajax requests
@@ -56,4 +57,11 @@
 			// return date from service
 			return json_encode(GetDate::getData($id));
 		}
+
+
+
+
+		public function createComment(Request $request) {
+			return commentNew::createComment($request);
+		} 
 	} 

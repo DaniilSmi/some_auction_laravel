@@ -34,3 +34,4 @@ Route::any('/new-password', [NewPasswordController::class, "new"]);
 Route::get('/log-out', [LogOutController::class, "logout"]);
 Route::get('/car/{id}/{title}', [InfileController::class, 'infile']);
 Route::get('/get-time/{id}', [PostAjaxController::class, 'getTime']);
+Route::post('/create-comment', [PostAjaxController::class, 'createComment']);

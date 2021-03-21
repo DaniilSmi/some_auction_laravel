@@ -94,11 +94,13 @@
 
 							<div class="comment-block">
 								<h3>Comments & Bids</h3>
-								<form id="comments-form-infile" disabled method="POST" action="/do-comment">
-									<input type="hidden" value="" id="id_com_reply" style="display: none;">
+								<form id="comments-form-infile" disabled method="POST" action="/create-comment">
+									{{csrf_field()}}
+									<input type="hidden" value="" id="id_com_reply" style="display: none;" name="id_com_reply">
+									<input type="hidden" value="{{$car->id}}" id="id_com_car" style="display: none;" name="id_com_car">
 									<div class="reply_comments" style="display: none;"><div  id="reply_text" >Re: <span></span></div><button id="close_reply" type="button">X</button></div>
 									<textarea style="" id="ajax-textarea-infile-comments" placeholder="Add a comment..." name='comm_text_area'></textarea><br>
-									<div class="button-block"><button type="submit" id="ajax-submit-infile-comments" class="disabled"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEZSURBVHgB7ZUxDoIwFIb7HsToYKyri028gIvGUW/gDdSbeBO5iauJixcw4uJqR2O01TYgSgq04MifGFPC/328QIEQh1A2pO8fc+mA7YkKLLFx0iVx7/LwwG16SCzz8H2WrPyhbc9aUDa1oBb8SVBmh+blm4fRDr2qXdoejBekYtqDySLmKZGa4LPlUZKgikTBUYogOdKkqN4pIOSqqiQNB8AVD3ehvgc83AdVJEb4cafXn6eorCQP/iMoIymC62OmImWjpUTYxGsBZClBnD2BW10SYvb0/H4RXMUzCW78cmh1eud3ax5dxRwkqn/9HZCgR18XwaNudtKTGAE58MwJ4qQncYUXCvIkNnArgUliC3cOZRNG2ZS6dF7zxph4nzhaGAAAAABJRU5ErkJggg=="></button></div>
+									<div class="button-block"><button type="submit" id="ajax-submit-infile-comments" class="disabled" name="submit-comment"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEZSURBVHgB7ZUxDoIwFIb7HsToYKyri028gIvGUW/gDdSbeBO5iauJixcw4uJqR2O01TYgSgq04MifGFPC/328QIEQh1A2pO8fc+mA7YkKLLFx0iVx7/LwwG16SCzz8H2WrPyhbc9aUDa1oBb8SVBmh+blm4fRDr2qXdoejBekYtqDySLmKZGa4LPlUZKgikTBUYogOdKkqN4pIOSqqiQNB8AVD3ehvgc83AdVJEb4cafXn6eorCQP/iMoIymC62OmImWjpUTYxGsBZClBnD2BW10SYvb0/H4RXMUzCW78cmh1eud3ax5dxRwkqn/9HZCgR18XwaNudtKTGAE58MwJ4qQncYUXCvIkNnArgUliC3cOZRNG2ZS6dF7zxph4nzhaGAAAAABJRU5ErkJggg=="></button></div>
 								</form>
 
 								<div class="comments-container-infile">

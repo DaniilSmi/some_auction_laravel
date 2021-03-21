@@ -29,6 +29,7 @@ close_reply.onclick = function() {
     reply_text.innerHTML = '';
     reply_comments_area.style.display = "none";
     inputText.style.paddingLeft = '0.5rem';
+    input_reply_id.value = ''; 
 }
 
 
