@@ -35,3 +35,7 @@ Route::get('/log-out', [LogOutController::class, "logout"]);
 Route::get('/car/{id}/{title}', [InfileController::class, 'infile']);
 Route::get('/get-time/{id}', [PostAjaxController::class, 'getTime']);
 Route::post('/create-comment', [PostAjaxController::class, 'createComment']);
+Route::get('/get-newest-comments/{id}', [PostAjaxController::class, 'getNewestComments']);
+Route::get('/get-upvoted-comments/{id}', [PostAjaxController::class, 'getUpvotedComments']);
+Route::get('/get-seller-comments/{id}', [PostAjaxController::class, 'getSellerComments']);
+Route::get('/get-bids-comments/{id}', [PostAjaxController::class, 'getBidsComments']);

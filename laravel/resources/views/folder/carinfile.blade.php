@@ -179,4 +179,5 @@
 	<script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/ajax/counter.js') }}"></script>
 	<script>countM({{$car->id}})</script>
+	<script>setId({{$car->id}})</script>
 @stop

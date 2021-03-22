@@ -181,6 +181,7 @@ return [
         App\Providers\NewPasswordjProvider::class,
         App\Providers\GetDateProvider::class,
         App\Providers\CreateCommentProvider::class,
+        App\Providers\CommentHtmlProvider::class,
     ],
 
     /*
@@ -240,6 +241,7 @@ return [
         'NewPS' => App\Facades\NewPasswordjFacade::class,
         'GetDate' => App\Facades\GetDateFacade::class,
         'commentNew' => App\Facades\CreateCommentFacade::class,
+        'commentHtml' => App\Facades\CommentHtmlFacade::class,
     ],
 
 ];

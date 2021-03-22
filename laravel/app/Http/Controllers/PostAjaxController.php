@@ -11,6 +11,7 @@
 	use SearchOp;
 	use GetDate;
 	use commentNew;
+	use commentHtml;
 
 	/**
 	 *  Do ajax requests
@@ -64,4 +65,21 @@
 		public function createComment(Request $request) {
 			return commentNew::createComment($request);
 		} 
+
+		public function getNewestComments($id) {
+			return $id;
+		}
+
+		public function getUpvotedComments($id) {
+
+		}
+
+
+		public function getSellerComments($id) {
+
+		}
+
+		public function getBidsComments($id) {
+
+		}
 	} 

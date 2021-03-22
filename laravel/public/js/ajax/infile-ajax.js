@@ -14,6 +14,12 @@ const sliders = document.querySelectorAll('.slide');
 let area = document.querySelector('.slider-content');
 const width = document.querySelector('.container').offsetWidth;
 
+// set id variable
+
+function setId(id) {
+ publicId = id;
+}
+
 class Getter 
 {
   constructor (url) {
@@ -185,7 +191,6 @@ function show(i) {
 for (let i=0; i<buttons.length; i++) {
   buttons[i].onclick = function () {
     show(i);
-
     // check for click data
     if (i==0) {
       getNewest();
