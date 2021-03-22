@@ -106,7 +106,7 @@
 								<div class="comments-container-infile">
 
 									<div class="slider slider-infile">
-						<div class="slider-titles slider-titles-comments"><a href="javascript://" class="slider-titles-hrefs">Newest</a><a href="javascript://" class="slider-titles-hrefs">Most Upvoted</a><a href="javascript://" class="slider-titles-hrefs">Seller Comments</a><a href="javascript://" class="slider-titles-hrefs">Bid History</a></div>
+						<div class="slider-titles slider-titles-comments"><a href="javascript://" class="slider-titles-hrefs slider_titles_href_comments" onclick="anotherPage(0)">Newest</a><a href="javascript://" class="slider-titles-hrefs slider_titles_href_comments" onclick="anotherPage(1)">Most Upvoted</a><a href="javascript://" class="slider-titles-hrefs slider_titles_href_comments" onclick="anotherPage(2)">Seller Comments</a><a href="javascript://" class="slider-titles-hrefs slider_titles_href_comments" onclick="anotherPage(3)">Bid History</a></div>
 						<div class="sliderss">
 							<div class="slider-content">
 								<div class="slide">
@@ -175,7 +175,7 @@
 	<script type="text/javascript" src="{{ asset('js/ajax/infile-ajax.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/scroll-infile.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/input-infile.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/indexslider.js') }}"></script>
+	<!--<script type="text/javascript" src="{{ asset('js/indexslider.js') }}"></script>-->
 	<script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/ajax/counter.js') }}"></script>
 	<script>countM({{$car->id}})</script>

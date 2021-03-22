@@ -9,6 +9,10 @@ let inputText1 = document.querySelector('#ajax-textarea-infile-comments');
 let reply_text1 = document.querySelector('#reply_text span');
 let reply_comments_area1 = document.querySelector('.reply_comments');
 let input_reply_id1 = document.querySelector('#id_com_reply');
+const buttons = document.querySelectorAll('.slider-titles-hrefs');
+const sliders = document.querySelectorAll('.slide');
+let area = document.querySelector('.slider-content');
+const width = document.querySelector('.container').offsetWidth;
 
 class Getter 
 {
@@ -145,3 +149,57 @@ $(function() {
         e.preventDefault(); 
       });
 });
+
+
+function getNewest() {
+
+}
+
+function getUpvoted() {
+
+}
+
+function getSeller() {
+
+}
+
+function getBids() {
+  
+}
+
+
+
+// show current page function
+function show(i) {
+  for (let ii=0; ii<sliders.length; ii++) {
+    sliders[ii].style.height = '0';
+    buttons[ii].classList.remove('title-active');
+    sliders[ii].classList.remove('effectClass');
+  }
+  sliders[i].style.height = '100%';
+  buttons[i].classList.add('title-active');
+  sliders[i].classList.add('effectClass');
+}
+
+// click handler
+for (let i=0; i<buttons.length; i++) {
+  buttons[i].onclick = function () {
+    show(i);
+
+    // check for click data
+    if (i==0) {
+      getNewest();
+    } else if (i==1) {
+      getUpvoted();
+    }else if (i==2) {
+      getSeller();
+    } else {
+      getBids();
+    }
+  }
+}
+
+
+window.onload = function () {
+  show(0);
+}
