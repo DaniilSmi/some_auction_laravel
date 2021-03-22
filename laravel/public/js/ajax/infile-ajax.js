@@ -6,6 +6,9 @@ let loginWindow1 = document.querySelector('.login');
 let submitB1 = document.querySelector('#ajax-submit-infile-comments');
 let formDis1 = document.querySelector('#comments-form-infile'); 
 let inputText1 = document.querySelector('#ajax-textarea-infile-comments');
+let reply_text1 = document.querySelector('#reply_text span');
+let reply_comments_area1 = document.querySelector('.reply_comments');
+let input_reply_id1 = document.querySelector('#id_com_reply');
 
 class Getter 
 {
@@ -130,6 +133,10 @@ $(function() {
             submitB1.classList.add('disabled');
             formDis1.setAttribute('disabled', '');
             inputText1.style.height = '61px';
+            reply_text1.innerHTML = '';
+            reply_comments_area1.style.display = "none";
+            inputText1.style.paddingLeft = '0.5rem';
+            input_reply_id1.value = ''; 
           }
         }).fail(function(response) {
           console.log(response);
