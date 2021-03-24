@@ -67,19 +67,23 @@
 		} 
 
 		public function getNewestComments($id) {
-			return $id;
+			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? ORDER BY `add_date` DESC', [$id]);
+			return json_encode(commentHtml::commentBody($comments));
 		}
 
 		public function getUpvotedComments($id) {
-
+			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? ORDER BY `Upvotes` DESC', [$id]);
+			return json_encode(commentHtml::commentBody($comments));
 		}
 
 
 		public function getSellerComments($id) {
-
+			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? WHERE `is_seller` = 1', [$id]);
+			return json_encode(commentHtml::commentBody($comments));
 		}
 
 		public function getBidsComments($id) {
-
+			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? WHERE `type` = comment', [$id]);
+			return json_encode(commentHtml::commentBody($comments));
 		}
 	} 

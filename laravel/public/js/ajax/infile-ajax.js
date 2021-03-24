@@ -13,6 +13,7 @@ const buttons = document.querySelectorAll('.slider-titles-hrefs');
 const sliders = document.querySelectorAll('.slide');
 let area = document.querySelector('.slider-content');
 const width = document.querySelector('.container').offsetWidth;
+let areeF = document.querySelectorAll('.slide');
 
 // set id variable
 
@@ -121,44 +122,12 @@ getNewCars();
 
 
 
-// comment form sender
 
-$(function() {
-      $('#comments-form-infile').submit(function(e) {
-        var $form = $(this);
-        $.ajax({
-          type: $form.attr('method'),
-          url: $form.attr('action'),
-          data: $form.serialize()
-        }).done(function(response) {
-          console.log(response);
-          if (response == 'not-auth') {
-              closeMobileMenu();
-              bodyF1.style.overflow = 'hidden';
-              loginWindow1.style.display = "flex";
-          } 
-          if (response == 1) {
-
-            document.querySelector('#ajax-textarea-infile-comments').value = '';
-            submitB1.classList.add('disabled');
-            formDis1.setAttribute('disabled', '');
-            inputText1.style.height = '61px';
-            reply_text1.innerHTML = '';
-            reply_comments_area1.style.display = "none";
-            inputText1.style.paddingLeft = '0.5rem';
-            input_reply_id1.value = ''; 
-          }
-        }).fail(function(response) {
-          console.log(response);
-        });
-        //отмена действия по умолчанию для кнопки submit
-        e.preventDefault(); 
-      });
-});
 
 
 function getNewest() {
-
+  let getN = new Getter('/get-newest-comments/'+publicId);
+  getN.getSmthW().then(res => areeF[0].innerHTML = res);
 }
 
 function getUpvoted() {
@@ -207,4 +176,43 @@ for (let i=0; i<buttons.length; i++) {
 
 window.onload = function () {
   show(0);
+  getNewest();
 }
+
+
+// comment form sender
+
+$(function() {
+      $('#comments-form-infile').submit(function(e) {
+        var $form = $(this);
+        $.ajax({
+          type: $form.attr('method'),
+          url: $form.attr('action'),
+          data: $form.serialize()
+        }).done(function(response) {
+          console.log(response);
+          if (response == 'not-auth') {
+              closeMobileMenu();
+              bodyF1.style.overflow = 'hidden';
+              loginWindow1.style.display = "flex";
+          } 
+          if (response == 1) {
+
+            document.querySelector('#ajax-textarea-infile-comments').value = '';
+            submitB1.classList.add('disabled');
+            formDis1.setAttribute('disabled', '');
+            inputText1.style.height = '61px';
+            reply_text1.innerHTML = '';
+            reply_comments_area1.style.display = "none";
+            inputText1.style.paddingLeft = '0.5rem';
+            input_reply_id1.value = ''; 
+            show(0);
+            getNewest();
+          }
+        }).fail(function(response) {
+          console.log(response);
+        });
+        //отмена действия по умолчанию для кнопки submit
+        e.preventDefault(); 
+      });
+});

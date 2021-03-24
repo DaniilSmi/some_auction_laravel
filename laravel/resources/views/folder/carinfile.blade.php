@@ -110,7 +110,7 @@
 						<div class="sliderss">
 							<div class="slider-content">
 								<div class="slide">
-									<div class="comment-in-infile">
+									<!--<div class="comment-in-infile">
 										<div class="comment-header"><img class="seller-image" src="{{ asset('images/ferrari.jpg') }}"><a href="#" class="seller-name-comment table-a">Seller</a><svg class="verified" width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="v-rkJj5dkREliotJamesv"><title id="v-rkJj5dkREliotJamesv">Registered Bidder</title><path d="M6.166 1.286c.952-1.715 3.418-1.715 4.37 0l.425.764.84-.24c1.886-.54 3.63 1.205 3.091 3.09l-.24.841.764.425c1.715.952 1.715 3.418 0 4.37l-.764.425.24.84c.54 1.886-1.205 3.63-3.09 3.091l-.841-.24-.424.764c-.953 1.715-3.419 1.715-4.371 0l-.425-.764-.84.24c-1.886.54-3.63-1.205-3.091-3.09l.24-.841-.764-.424c-1.715-.953-1.715-3.419 0-4.371l.764-.425-.24-.84C1.27 3.015 3.015 1.27 4.9 1.81l.841.24.425-.764z" fill="#0c4370"></path><path d="M11.5 6.351l-3.625 4.5L6 9.033" stroke="#0F2236" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="seller"><span>Seller</span></div><span id="time-for-comment">Yesterday</span></div>
 										<div class="comment-text"><p>Some text here</p></div>
 										<div class="buttons-comment"><button type="button" class="button-upvote"><svg class="reputation" width="8" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ir-3Olq5AYYuv"><title id="ir-3Olq5AYYuv">Reputation Icon</title><path d="M4 1v8M1 4l3-3 3 3" stroke="#828282" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg> 0</button>
@@ -131,7 +131,7 @@
 										<div class="buttons-comment"><button type="button" class="button-upvote"><svg class="reputation" width="8" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ir-3Olq5AYYuv"><title id="ir-3Olq5AYYuv">Reputation Icon</title><path d="M4 1v8M1 4l3-3 3 3" stroke="#828282" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg> 0</button>
 											<button class="reply-button-comment" onclick="showReply('lada_racing', 7878);"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZbfjYJAEMZnJ/DGgyVsCWcHdx0cFZxXiViBJaDPhBArsATtQDqQAvjjN8lCfGFFdo0vfsmwOzCZ3+4wbCCCiqJYwDS9QCyJ27a9wi5pmi7Is7iua907URR9kWcxvVgfwPsBAc2Uae8tM5/jON6Mxc3eAdp7heEXkASwtXdAEAQ7DKXMbRBGYDU4zJomCmUpEf/zCMImoIf80ROaAmEEVV3X7Y3/bavnHIiSi5ymeHDCVJv7JaAHWDUVpJTSsKECgCbSXaq/YdrueAdxVtM0y6GLzFaXmP5j5WdyVxmGYaXIk/I8l7onfXJ5L7JoL4Cx5OI4A2zJnQGPkjsBkHyFIbUlF/k4rkeTOyvLMvnyrX8iN055my2av4UmAAAAAElFTkSuQmCC"></button>
 										</div>
-									</div>
+									</div>-->
 								</div>
 								<div class="slide">
 									
