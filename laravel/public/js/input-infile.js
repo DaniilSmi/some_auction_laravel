@@ -36,6 +36,7 @@ close_reply.onclick = function() {
 function showReply (text, parent_id) {
     // set text for user view
     reply_text.innerHTML = text;
+    inputText.value = text+', '+inputText.value;
     // show reply_text
     reply_comments_area.style.display = "block";
     // get width

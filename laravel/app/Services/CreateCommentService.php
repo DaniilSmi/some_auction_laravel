@@ -18,7 +18,7 @@ class CreateCommentService
 					// check for text length
 					if ($request->input('comm_text_area') != '') {
 						// insert comment
-						DB::insert('INSERT INTO `comments_car` (`user_id`, `text`, `parent_id`, `is_seller`, `car_id`) 	VALUES (?,?,?,?,?)', [$user->id, $request->input('comm_text_area'), $request->input('id_com_reply'), true, $request->input('id_com_car')]);
+						DB::insert('INSERT INTO `comments_car` (`user_id`, `text`, `parent_id`, `is_seller`, `car_id`) 	VALUES (?,?,?,?,?)', [$user->id, htmlspecialchars($request->input('comm_text_area')), $request->input('id_com_reply'), true, $request->input('id_com_car')]);
 						return true;
 					}
 				} else {
@@ -27,7 +27,7 @@ class CreateCommentService
 					if ($request->input('comm_text_area') != '') {
 						// insert comment
 
-						DB::insert('INSERT INTO `comments_car` (`user_id`, `text`, `is_seller`, `car_id`) 	VALUES (?,?,?,?)', [$user->id, $request->input('comm_text_area'), true, $request->input('id_com_car')]);
+						DB::insert('INSERT INTO `comments_car` (`user_id`, `text`, `is_seller`, `car_id`) 	VALUES (?,?,?,?)', [$user->id,htmlspecialchars($request->input('comm_text_area')), true, $request->input('id_com_car')]);
 						return true;
 					}
 				}

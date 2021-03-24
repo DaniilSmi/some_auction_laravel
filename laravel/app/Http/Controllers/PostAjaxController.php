@@ -67,7 +67,7 @@
 		} 
 
 		public function getNewestComments($id) {
-			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? ORDER BY `add_date` DESC', [$id]);
+			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? ORDER BY   `add_date` DESC', [$id]);
 			return json_encode(commentHtml::commentBody($comments));
 		}
 

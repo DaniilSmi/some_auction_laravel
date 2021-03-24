@@ -1756,3 +1756,9 @@ ul {
 	bottom: -0.15rem;
 	cursor: pointer;
 }
+
+.comment-text p {
+	word-wrap: break-word;
+	position: relative;
+	max-width: 50vw;
+}

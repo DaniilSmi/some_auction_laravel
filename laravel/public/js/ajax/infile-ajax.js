@@ -14,6 +14,7 @@ const sliders = document.querySelectorAll('.slide');
 let area = document.querySelector('.slider-content');
 const width = document.querySelector('.container').offsetWidth;
 let areeF = document.querySelectorAll('.slide');
+let coomt = document.querySelectorAll('.comment-text p');
 
 // set id variable
 
@@ -60,6 +61,8 @@ class Getter
       return json;
     } else {
       alert("Ошибка HTTP: " + response.status);
+      let json = await response.json();
+      return json;
     }
   }
 }
@@ -173,7 +176,7 @@ for (let i=0; i<buttons.length; i++) {
   }
 }
 
-
+// start position
 window.onload = function () {
   show(0);
   getNewest();
@@ -216,3 +219,5 @@ $(function() {
         e.preventDefault(); 
       });
 });
+
+
