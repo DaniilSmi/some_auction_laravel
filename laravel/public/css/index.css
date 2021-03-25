@@ -1762,3 +1762,15 @@ ul {
 	position: relative;
 	max-width: 50vw;
 }
+
+.bid-styles {
+	margin-bottom: 0;
+    padding: 0 12px;
+    background: #262626;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    height: 31px;
+
+    color: white;
+}

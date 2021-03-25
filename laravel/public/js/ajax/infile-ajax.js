@@ -124,29 +124,6 @@ function getImages() {
 getNewCars();
 
 
-
-
-
-
-function getNewest() {
-  let getN = new Getter('/get-newest-comments/'+publicId);
-  getN.getSmthW().then(res => areeF[0].innerHTML = res);
-}
-
-function getUpvoted() {
-
-}
-
-function getSeller() {
-
-}
-
-function getBids() {
-  
-}
-
-
-
 // show current page function
 function show(i) {
   for (let ii=0; ii<sliders.length; ii++) {
@@ -159,10 +136,36 @@ function show(i) {
   sliders[i].classList.add('effectClass');
 }
 
+
+
+
+
+function getNewest() {
+  let getN = new Getter('/get-newest-comments/'+publicId);
+  getN.getSmthW().then(res => areeF[0].innerHTML = res).then(() => show(0));
+}
+
+function getUpvoted() {
+  let getN = new Getter('/get-upvoted-comments/'+publicId);
+   getN.getSmthW().then(res => areeF[1].innerHTML = res).then(() => show(1));
+}
+
+function getSeller() {
+  let getN = new Getter('/get-seller-comments/'+publicId);
+   getN.getSmthW().then(res => areeF[2].innerHTML = res).then(() => show(2));
+}
+
+function getBids() {
+  let getN = new Getter('/get-bids-comments/'+publicId);
+   getN.getSmthW().then(res => areeF[3].innerHTML = res).then(() => show(3));
+}
+
+
+
+
 // click handler
 for (let i=0; i<buttons.length; i++) {
   buttons[i].onclick = function () {
-    show(i);
     // check for click data
     if (i==0) {
       getNewest();
@@ -209,7 +212,6 @@ $(function() {
             reply_comments_area1.style.display = "none";
             inputText1.style.paddingLeft = '0.5rem';
             input_reply_id1.value = ''; 
-            show(0);
             getNewest();
           }
         }).fail(function(response) {

@@ -78,12 +78,12 @@
 
 
 		public function getSellerComments($id) {
-			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? WHERE `is_seller` = 1', [$id]);
+			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? AND `is_seller` = 1 ORDER BY `add_date` DESC' , [$id]);
 			return json_encode(commentHtml::commentBody($comments));
 		}
 
 		public function getBidsComments($id) {
-			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? WHERE `type` = comment', [$id]);
+			$comments = DB::select("SELECT * FROM `comments_car` WHERE `car_id` = ? AND `type` = 'bid' ORDER BY `add_date` DESC", [$id]);
 			return json_encode(commentHtml::commentBody($comments));
 		}
 	} 
