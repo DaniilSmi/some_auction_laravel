@@ -35,6 +35,8 @@ class CommentHtmlService
 			// check for seller
 			if ($element->is_seller == 1) {
 				$seller = '<div class="seller"><span>Seller</span></div>';
+			} else {
+				$seller = '';
 			}
 
 			// check for comment type
@@ -62,6 +64,7 @@ class CommentHtmlService
 
 		}
 
+		unset($seller);
 		return $html;
 	}
 

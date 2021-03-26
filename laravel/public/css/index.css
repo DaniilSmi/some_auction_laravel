@@ -1782,3 +1782,7 @@ ul {
 .reputation, .cct {
 	z-index: -1000;
 }
+
+.cct {
+	cursor: pointer;
+}
