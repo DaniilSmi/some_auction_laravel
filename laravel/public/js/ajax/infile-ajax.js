@@ -222,4 +222,46 @@ $(function() {
       });
 });
 
+// listen clicks on buttons
+$("body").on("click", ".button-upvote", function (e) {   
+  // check for another dom elements
+  if ($(e.target).attr('class') == 'reputation' || $(e.target).attr('class') == 'cct') {
+    // target = parent = button upvote
+    target = $(e.target).parent();
+  } else {
+    // target = target
+    target = $(e.target);
+  }
 
+  // do ajax query 
+  let getN = new Getter('/add-upvote/'+target.val());
+  // show results
+  getN.getSmthW().then(res => {
+
+    if (res == 'added') {
+      // get number for add 1 to it
+      data = target.find('.cct').html();
+      // add 1
+      data = Number(data) + 1;
+      // show result
+      target.find('.cct').html(data);   
+    }
+
+    if (res == 'deleted') {
+      // get number for remove 1 to it
+      data = target.find('.cct').html();
+      // remove 1
+      data = Number(data) - 1;
+      // show result
+      target.find('.cct').html(data);
+    }
+
+    if (res == 'not-auth') {
+      // open auth window
+      closeMobileMenu();
+      bodyF1.style.overflow = 'hidden';
+      loginWindow1.style.display = "flex";
+    }
+    
+  });
+});

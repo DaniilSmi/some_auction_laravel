@@ -182,6 +182,7 @@ return [
         App\Providers\GetDateProvider::class,
         App\Providers\CreateCommentProvider::class,
         App\Providers\CommentHtmlProvider::class,
+        App\Providers\AddUpvoteProvider::class,
     ],
 
     /*
@@ -242,6 +243,7 @@ return [
         'GetDate' => App\Facades\GetDateFacade::class,
         'commentNew' => App\Facades\CreateCommentFacade::class,
         'commentHtml' => App\Facades\CommentHtmlFacade::class,
+        'UpO' => App\Facades\AddUpvoteFacade::class,
     ],
 
 ];

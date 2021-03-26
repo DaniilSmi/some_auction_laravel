@@ -1774,3 +1774,11 @@ ul {
 
     color: white;
 }
+
+.verified {
+	margin-right: 1rem;
+}
+
+.reputation, .cct {
+	z-index: -1000;
+}

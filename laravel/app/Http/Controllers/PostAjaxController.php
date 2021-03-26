@@ -12,6 +12,7 @@
 	use GetDate;
 	use commentNew;
 	use commentHtml;
+	use UpO;
 
 	/**
 	 *  Do ajax requests
@@ -79,11 +80,31 @@
 
 		public function getSellerComments($id) {
 			$comments = DB::select('SELECT * FROM `comments_car` WHERE `car_id` = ? AND `is_seller` = 1 ORDER BY `add_date` DESC' , [$id]);
+
+			// return right array
+			foreach ($comments as $key => $element) {
+				// if comment has parent - load the parent
+				if ($element->parent_id != null) {
+					// select parent from db
+					$add_parent = DB::select('SELECT * FROM `comments_car` WHERE `id` = ?', [$element->parent_id]);
+					// add parent to comments if it`s unquie
+					if (!in_array($add_parent[0], $comments)) {
+						$comments[] = $add_parent[0];
+					}
+				}
+			}
+
+
 			return json_encode(commentHtml::commentBody($comments));
 		}
 
 		public function getBidsComments($id) {
 			$comments = DB::select("SELECT * FROM `comments_car` WHERE `car_id` = ? AND `type` = 'bid' ORDER BY `add_date` DESC", [$id]);
 			return json_encode(commentHtml::commentBody($comments));
+		}
+
+		public function addUpvote($id, Request $request) {
+			// add upvote
+			return json_encode(UpO::addUpvote($id, $request));
 		}
 	} 

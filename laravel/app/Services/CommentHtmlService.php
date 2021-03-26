@@ -2,6 +2,7 @@
 
 namespace App\Services;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class CommentHtmlService
 {
@@ -44,13 +45,16 @@ class CommentHtmlService
 				$textts = '<p>'.$element->text.'</p>';
 			}
 
+			$time = new DateTime($element->add_date);
+			$time = $time->format('l, F d g:ia');
+
 			// set html
 
 			$html = $html.'<div class="comment-in-infile">
 										<div class="comment-header"><img class="seller-image" src="/images/ferrari.jpg"><a href="#" class="seller-name-comment table-a">'.$user->login.'</a>'
-										.$veri.$seller.'<span id="time-for-comment">Yesterday</span></div>
+										.$veri.$seller.'<span id="time-for-comment">'.$time.'</span></div>
 										<div class="comment-text">'.$textts.'</div>
-										<div class="buttons-comment"><button type="button" class="button-upvote"><svg class="reputation" width="8" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ir-3Olq5AYYuv"><title id="ir-3Olq5AYYuv">Reputation Icon</title><path d="M4 1v8M1 4l3-3 3 3" stroke="#828282" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg> '.$element->upvotes.'</button>
+										<div class="buttons-comment"><button type="button" class="button-upvote" value="'.$element->id.'"><img class="reputation" src="/images/png.png"> <span class="cct">'.$element->upvotes.'</span></button>
 											<button class="reply-button-comment" onclick="showReply(`'.$user->login.'`, '.$pr.');"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZbfjYJAEMZnJ/DGgyVsCWcHdx0cFZxXiViBJaDPhBArsATtQDqQAvjjN8lCfGFFdo0vfsmwOzCZ3+4wbCCCiqJYwDS9QCyJ27a9wi5pmi7Is7iua907URR9kWcxvVgfwPsBAc2Uae8tM5/jON6Mxc3eAdp7heEXkASwtXdAEAQ7DKXMbRBGYDU4zJomCmUpEf/zCMImoIf80ROaAmEEVV3X7Y3/bavnHIiSi5ymeHDCVJv7JaAHWDUVpJTSsKECgCbSXaq/YdrueAdxVtM0y6GLzFaXmP5j5WdyVxmGYaXIk/I8l7onfXJ5L7JoL4Cx5OI4A2zJnQGPkjsBkHyFIbUlF/k4rkeTOyvLMvnyrX8iN055my2av4UmAAAAAElFTkSuQmCC"></button>
 										</div>
 									</div>';
