@@ -107,4 +107,12 @@
 			// add upvote
 			return json_encode(UpO::addUpvote($id, $request));
 		}
+
+		public function countComments($id) {
+			$comments = DB::select('SELECT COUNT(*) FROM `comments_car` WHERE `car_id` = ?', [$id]);
+			$comments = json_decode(json_encode($comments), true);
+
+
+			return json_encode($comments[0]['COUNT(*)']);
+		}
 	} 

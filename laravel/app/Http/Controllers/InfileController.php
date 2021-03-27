@@ -19,6 +19,9 @@ class InfileController extends BaseController
 		public function infile (Request $request, $id, $title) {
 
 			$car = DB::select('SELECT * FROM `car-imp` WHERE `id` = ? and `title` = ? LIMIT 1', [$id, $title]);
+			$comments = DB::select('SELECT COUNT(*) FROM `comments_car` WHERE `car_id` = ?', [$id]);
+			$comments = json_decode(json_encode($comments), true);
+
 
 			if (!empty($car)) {
 				$car = $car[0];
@@ -28,7 +31,7 @@ class InfileController extends BaseController
 				$time = $time->format('l, F d g:ia');
 
 				$car->time_to_end = $time;
-				return View::make('folder/carinfile', ['car' => $car]);
+				return View::make('folder/carinfile', ['car' => $car, 'comments' => $comments[0]['COUNT(*)']]);
 			} else {
 				abort(404);
 			}

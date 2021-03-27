@@ -15,6 +15,7 @@ let area = document.querySelector('.slider-content');
 const width = document.querySelector('.container').offsetWidth;
 let areeF = document.querySelectorAll('.slide');
 let coomt = document.querySelectorAll('.comment-text p');
+const countCommentArea = document.querySelector('#span-count-comments');
 
 // set id variable
 
@@ -185,6 +186,11 @@ window.onload = function () {
   getNewest();
 }
 
+function getCountC() {
+   let getN = new Getter('/count-comments/'+publicId);
+   getN.getSmthW().then(res => countCommentArea.innerHTML = res);
+}
+
 
 // comment form sender
 
@@ -213,6 +219,7 @@ $(function() {
             inputText1.style.paddingLeft = '0.5rem';
             input_reply_id1.value = ''; 
             getNewest();
+            getCountC();
           }
         }).fail(function(response) {
           console.log(response);

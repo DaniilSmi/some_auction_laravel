@@ -40,3 +40,4 @@ Route::get('/get-upvoted-comments/{id}', [PostAjaxController::class, 'getUpvoted
 Route::get('/get-seller-comments/{id}', [PostAjaxController::class, 'getSellerComments']);
 Route::get('/get-bids-comments/{id}', [PostAjaxController::class, 'getBidsComments']);
 Route::get('/add-upvote/{id}', [PostAjaxController::class, 'addUpvote']);
+Route::get('/count-comments/{id}', [PostAjaxController::class, 'countComments']);
