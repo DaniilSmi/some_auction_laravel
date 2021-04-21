@@ -183,6 +183,7 @@ return [
         App\Providers\CreateCommentProvider::class,
         App\Providers\CommentHtmlProvider::class,
         App\Providers\AddUpvoteProvider::class,
+        App\Providers\CreateBidProvider::class,
     ],
 
     /*

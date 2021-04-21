@@ -1137,7 +1137,7 @@ ul {
 	color: grey;
 }
 
-.login, .register, .forgot-password {
+.login, .register, .forgot-password, .create-bid {
 	width: 100%;
 	min-height: 100%;
 	position: absolute;
@@ -1149,7 +1149,7 @@ ul {
 	position: fixed;
 }
 
-.login-container, .register-container, .forgot-password-container {
+.login-container, .register-container, .forgot-password-container, .create-bid-container {
 	width: 500px;
 	height: 550px;
 	background-color: white;
@@ -1785,4 +1785,26 @@ ul {
 
 .cct {
 	cursor: pointer;
+}
+
+
+#postal-on-card-popup {
+	width: 60%;
+}
+
+#card-number {
+	width: 40%;
+}
+
+.card-most-important {
+	display: flex;
+	justify-content: space-between;
+}
+
+.exp {
+	width: 20%;
+}
+
+.create-bid-container {
+	height: 300px;
 }

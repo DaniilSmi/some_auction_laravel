@@ -15,6 +15,9 @@ const forgot_open = document.querySelector('#open-forgot-password');
 let forgot_window = document.querySelector('.forgot-password');
 const close_forgot = document.querySelector('#close-forgot');
 const htS = document.querySelector('.form-or-data').innerHTML;
+const create_bid_container = document.querySelector('.create-bid');
+const open_bid_container = document.querySelector('#place-bid');
+const close_bid_container = document.querySelector('#close-bidder');
 /*open-new-account*/
 // show menu for mobile 
 
@@ -75,7 +78,7 @@ nottiWindow.onclick = function () {
 } catch {}
 
 forgot_open.onclick = function () {
-	bodyF.style.overflow = 'none';
+	bodyF.style.overflow = 'hidden';
 	loginWindow.style.display = "none";
 	forgot_window.style.display = "flex";
 }
@@ -84,3 +87,21 @@ close_forgot.onclick = function () {
 	bodyF.style.overflow = 'visible';
 	forgot_window.style.display = "none";
 }
+
+
+try {
+	open_bid_container.onclick = function () {
+		bodyF.style.overflow = 'hidden';
+		/*loginWindow.style.display = "none";*/
+		create_bid_container.style.display = "flex";
+	}
+} catch {}
+
+try {
+	close_bid_container.onclick = function () {
+		bodyF.style.overflow = 'visible';
+		create_bid_container.style.display = "none";
+	}
+} catch {}
+
+

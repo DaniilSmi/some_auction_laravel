@@ -25,6 +25,5 @@ for (let i=0; i<buttons.length; i++) {
 }
 
 
-window.onload = function () {
-	show(0);
-}
+
+show(0);

@@ -20,8 +20,23 @@ use App\Http\Controllers\InfileController;
 |
 */
 
+
+
 Route::get('/', [IndexPageController::class, 'show']);
 
+Route::get('/car/{id}/{title}', [InfileController::class, 'infile']);
+
+
+
+Route::get('/get-time/{id}', [PostAjaxController::class, 'getTime']);
+Route::post('/create-comment', [PostAjaxController::class, 'createComment']);
+Route::get('/get-newest-comments/{id}', [PostAjaxController::class, 'getNewestComments']);
+Route::get('/get-upvoted-comments/{id}', [PostAjaxController::class, 'getUpvotedComments']);
+Route::get('/get-seller-comments/{id}', [PostAjaxController::class, 'getSellerComments']);
+Route::get('/get-bids-comments/{id}', [PostAjaxController::class, 'getBidsComments']);
+Route::get('/add-upvote/{id}', [PostAjaxController::class, 'addUpvote']);
+Route::get('/count-comments/{id}', [PostAjaxController::class, 'countComments']);
+Route::post('/create-bid/{id}', [PostAjaxController::class, 'createBid']);
 Route::post('/post-do', [PostAjaxController::class, "nonReturnQuery"]);
 Route::post('/post-get', [PostAjaxController::class, "returnQuery"]);
 Route::get('/get-new-cars', [PostAjaxController::class, "returnNewCars"]);
@@ -32,12 +47,3 @@ Route::post('/register', [RegisterController::class, "register"]);
 Route::post('/forgot-password', [ForgotPasswordController::class, "forgot"]);
 Route::any('/new-password', [NewPasswordController::class, "new"]);
 Route::get('/log-out', [LogOutController::class, "logout"]);
-Route::get('/car/{id}/{title}', [InfileController::class, 'infile']);
-Route::get('/get-time/{id}', [PostAjaxController::class, 'getTime']);
-Route::post('/create-comment', [PostAjaxController::class, 'createComment']);
-Route::get('/get-newest-comments/{id}', [PostAjaxController::class, 'getNewestComments']);
-Route::get('/get-upvoted-comments/{id}', [PostAjaxController::class, 'getUpvotedComments']);
-Route::get('/get-seller-comments/{id}', [PostAjaxController::class, 'getSellerComments']);
-Route::get('/get-bids-comments/{id}', [PostAjaxController::class, 'getBidsComments']);
-Route::get('/add-upvote/{id}', [PostAjaxController::class, 'addUpvote']);
-Route::get('/count-comments/{id}', [PostAjaxController::class, 'countComments']);

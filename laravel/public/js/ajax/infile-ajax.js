@@ -62,8 +62,12 @@ class Getter
       return json;
     } else {
       alert("Ошибка HTTP: " + response.status);
+      if (response.status == 403) {
+        alert('ee');
+      }
       let json = await response.json();
       return json;
+
     }
   }
 }
@@ -116,7 +120,6 @@ function getImages() {
    tmp[i] = pairs[i].split('=');
   }
   //возвращаем объект ключей и значений
-  console.log(tmp);
  }
 }
 
@@ -272,3 +275,24 @@ $("body").on("click", ".button-upvote", function (e) {
     
   });
 });
+
+
+$(function() {
+      $('#form-place-bid').submit(function(e) {
+        var $form = $(this);
+        console.log($form.serialize());
+        $.ajax({
+          type: $form.attr('method'),
+          url: '/create-bid/'+publicId,
+          data: $form.serialize()
+        }).done(function(response) {
+          console.log(response);
+        }).fail(function(response) {
+          console.log(response);
+        });
+        //отмена действия по умолчанию для кнопки submit
+        e.preventDefault(); 
+      });
+});
+
+

@@ -115,4 +115,11 @@
 
 			return json_encode($comments[0]['COUNT(*)']);
 		}
+
+		public function createBid($id, Request $request) {
+			$addBid = resolve('App\Services\AddBid');
+			return $request;
+			//return $addBid->getSmt();
+			//return $ap1p;
+		}
 	} 

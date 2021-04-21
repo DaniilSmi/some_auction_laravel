@@ -15,6 +15,19 @@
 			</div>
 		</div>
 
+
+		<div class="create-bid" role="dialog" tabindex="-1"><div class="create-bid-container">
+			<a href="javascript://" id="close-bidder" class="close-popup">&times;</a>
+				<form id="form-place-bid" action="/create-bid" method="POST">
+					<h2 class="jsc">Register to bid</h2>			
+					{{csrf_field()}}		
+					<input type="number" min="0" name="summ" class="input-popup input-register" id="summ" required placeholder="Enter summ of money"> <br>
+					<input type="tel" name="phone-number" class="input-popup input-register" id="phone-number" placeholder="Phone number" required> <br>
+					<button type="submit" class="submit-popup">Place Bid</button>
+				</form>
+				<div class="b-href-margin-popup-bid" style="margin-bottom: 1rem;"><span style="color: red;" id="error-register"></span></div>
+		</div></div>
+
 		<div class="car-block-infile">
 			<div class="container">
 				<div class="car-in-infile">
@@ -51,25 +64,6 @@
 								<tr><td class="subtop1 grey-column bt-bt left-bottom-border">Body Style</td><td class="subtop2 bt-bt">{{$car->body_style}}</td><td class="subtop3 bt-bt grey-column">Seller Type</td><td class="subtop4 bt-bt right-bottom-border">{{$car->seller_type}}</td></tr>
 							</table>
 							<div class="lists">
-								<!--<h2>Settings</h2>
-								<ul>
-									<li>Some text</li>
-								</ul>
-								<hr class="hr-infile">
-								<h2>Settings</h2>
-								<ul>
-									<li>Some text</li>
-								</ul>
-								<hr class="hr-infile">
-								<h2>Settings</h2>
-								<ul>
-									<li>Some text</li>
-								</ul>
-								<hr class="hr-infile">
-								<h2>Settings</h2>
-								<ul>
-									<li>Some text</li>
-								</ul>-->
 
 								{!! $car->information !!}
 								
@@ -110,28 +104,7 @@
 						<div class="sliderss">
 							<div class="slider-content">
 								<div class="slide">
-									<!--<div class="comment-in-infile">
-										<div class="comment-header"><img class="seller-image" src="{{ asset('images/ferrari.jpg') }}"><a href="#" class="seller-name-comment table-a">Seller</a><svg class="verified" width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="v-rkJj5dkREliotJamesv"><title id="v-rkJj5dkREliotJamesv">Registered Bidder</title><path d="M6.166 1.286c.952-1.715 3.418-1.715 4.37 0l.425.764.84-.24c1.886-.54 3.63 1.205 3.091 3.09l-.24.841.764.425c1.715.952 1.715 3.418 0 4.37l-.764.425.24.84c.54 1.886-1.205 3.63-3.09 3.091l-.841-.24-.424.764c-.953 1.715-3.419 1.715-4.371 0l-.425-.764-.84.24c-1.886.54-3.63-1.205-3.091-3.09l.24-.841-.764-.424c-1.715-.953-1.715-3.419 0-4.371l.764-.425-.24-.84C1.27 3.015 3.015 1.27 4.9 1.81l.841.24.425-.764z" fill="#0c4370"></path><path d="M11.5 6.351l-3.625 4.5L6 9.033" stroke="#0F2236" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="seller"><span>Seller</span></div><span id="time-for-comment">Yesterday</span></div>
-										<div class="comment-text"><p>Some text here</p></div>
-										<div class="buttons-comment"><button type="button" class="button-upvote"><svg class="reputation" width="8" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ir-3Olq5AYYuv"><title id="ir-3Olq5AYYuv">Reputation Icon</title><path d="M4 1v8M1 4l3-3 3 3" stroke="#828282" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg> 0</button>
-											<button class="reply-button-comment" onclick="showReply('some_person', 45);"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZbfjYJAEMZnJ/DGgyVsCWcHdx0cFZxXiViBJaDPhBArsATtQDqQAvjjN8lCfGFFdo0vfsmwOzCZ3+4wbCCCiqJYwDS9QCyJ27a9wi5pmi7Is7iua907URR9kWcxvVgfwPsBAc2Uae8tM5/jON6Mxc3eAdp7heEXkASwtXdAEAQ7DKXMbRBGYDU4zJomCmUpEf/zCMImoIf80ROaAmEEVV3X7Y3/bavnHIiSi5ymeHDCVJv7JaAHWDUVpJTSsKECgCbSXaq/YdrueAdxVtM0y6GLzFaXmP5j5WdyVxmGYaXIk/I8l7onfXJ5L7JoL4Cx5OI4A2zJnQGPkjsBkHyFIbUlF/k4rkeTOyvLMvnyrX8iN055my2av4UmAAAAAElFTkSuQmCC"></button>
-										</div>
-									</div>
-									
-									<div class="comment-in-infile">
-										<div class="comment-header"><img class="seller-image" src="{{ asset('images/ferrari.jpg') }}"><a href="#" class="seller-name-comment table-a">Seller</a><svg class="verified" width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="v-rkJj5dkREliotJamesv"><title id="v-rkJj5dkREliotJamesv">Registered Bidder</title><path d="M6.166 1.286c.952-1.715 3.418-1.715 4.37 0l.425.764.84-.24c1.886-.54 3.63 1.205 3.091 3.09l-.24.841.764.425c1.715.952 1.715 3.418 0 4.37l-.764.425.24.84c.54 1.886-1.205 3.63-3.09 3.091l-.841-.24-.424.764c-.953 1.715-3.419 1.715-4.371 0l-.425-.764-.84.24c-1.886.54-3.63-1.205-3.091-3.09l.24-.841-.764-.424c-1.715-.953-1.715-3.419 0-4.371l.764-.425-.24-.84C1.27 3.015 3.015 1.27 4.9 1.81l.841.24.425-.764z" fill="#0c4370"></path><path d="M11.5 6.351l-3.625 4.5L6 9.033" stroke="#0F2236" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="seller"><span>Seller</span></div><span id="time-for-comment">Yesterday</span></div>
-										<div class="comment-text"><p>Some text here</p></div>
-										<div class="buttons-comment"><button type="button" class="button-upvote"><svg class="reputation" width="8" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ir-3Olq5AYYuv"><title id="ir-3Olq5AYYuv">Reputation Icon</title><path d="M4 1v8M1 4l3-3 3 3" stroke="#828282" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg> 0</button>
-											<button class="reply-button-comment" onclick="showReply('some_person', 45);"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZbfjYJAEMZnJ/DGgyVsCWcHdx0cFZxXiViBJaDPhBArsATtQDqQAvjjN8lCfGFFdo0vfsmwOzCZ3+4wbCCCiqJYwDS9QCyJ27a9wi5pmi7Is7iua907URR9kWcxvVgfwPsBAc2Uae8tM5/jON6Mxc3eAdp7heEXkASwtXdAEAQ7DKXMbRBGYDU4zJomCmUpEf/zCMImoIf80ROaAmEEVV3X7Y3/bavnHIiSi5ymeHDCVJv7JaAHWDUVpJTSsKECgCbSXaq/YdrueAdxVtM0y6GLzFaXmP5j5WdyVxmGYaXIk/I8l7onfXJ5L7JoL4Cx5OI4A2zJnQGPkjsBkHyFIbUlF/k4rkeTOyvLMvnyrX8iN055my2av4UmAAAAAElFTkSuQmCC"></button>
-										</div>
-									</div>
-									<div class="comment-in-infile">
-										<div class="comment-header"><img class="seller-image" src="{{ asset('images/ferrari.jpg') }}"><a href="#" class="seller-name-comment table-a">Seller</a><svg class="verified" width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="v-rkJj5dkREliotJamesv"><title id="v-rkJj5dkREliotJamesv">Registered Bidder</title><path d="M6.166 1.286c.952-1.715 3.418-1.715 4.37 0l.425.764.84-.24c1.886-.54 3.63 1.205 3.091 3.09l-.24.841.764.425c1.715.952 1.715 3.418 0 4.37l-.764.425.24.84c.54 1.886-1.205 3.63-3.09 3.091l-.841-.24-.424.764c-.953 1.715-3.419 1.715-4.371 0l-.425-.764-.84.24c-1.886.54-3.63-1.205-3.091-3.09l.24-.841-.764-.424c-1.715-.953-1.715-3.419 0-4.371l.764-.425-.24-.84C1.27 3.015 3.015 1.27 4.9 1.81l.841.24.425-.764z" fill="#0c4370"></path><path d="M11.5 6.351l-3.625 4.5L6 9.033" stroke="#0F2236" stroke-linecap="round" stroke-linejoin="round"></path></svg><div class="seller"><span>Seller</span></div><span id="time-for-comment">Yesterday</span></div>
-										<div class="comment-text"><p>Some text here</p></div>
-										<div class="buttons-comment"><button type="button" class="button-upvote"><svg class="reputation" width="8" height="10" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="ir-3Olq5AYYuv"><title id="ir-3Olq5AYYuv">Reputation Icon</title><path d="M4 1v8M1 4l3-3 3 3" stroke="#828282" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></path></svg> 0</button>
-											<button class="reply-button-comment" onclick="showReply('lada_racing', 7878);"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEYSURBVHgB7ZbfjYJAEMZnJ/DGgyVsCWcHdx0cFZxXiViBJaDPhBArsATtQDqQAvjjN8lCfGFFdo0vfsmwOzCZ3+4wbCCCiqJYwDS9QCyJ27a9wi5pmi7Is7iua907URR9kWcxvVgfwPsBAc2Uae8tM5/jON6Mxc3eAdp7heEXkASwtXdAEAQ7DKXMbRBGYDU4zJomCmUpEf/zCMImoIf80ROaAmEEVV3X7Y3/bavnHIiSi5ymeHDCVJv7JaAHWDUVpJTSsKECgCbSXaq/YdrueAdxVtM0y6GLzFaXmP5j5WdyVxmGYaXIk/I8l7onfXJ5L7JoL4Cx5OI4A2zJnQGPkjsBkHyFIbUlF/k4rkeTOyvLMvnyrX8iN055my2av4UmAAAAAElFTkSuQmCC"></button>
-										</div>
-									</div>-->
+
 								</div>
 								<div class="slide">
 									
@@ -175,7 +148,6 @@
 	<script type="text/javascript" src="{{ asset('js/ajax/infile-ajax.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/scroll-infile.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/input-infile.js') }}"></script>
-	<!--<script type="text/javascript" src="{{ asset('js/indexslider.js') }}"></script>-->
 	<script type="text/javascript" src="{{ asset('js/modal.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/ajax/counter.js') }}"></script>
 	<script>countM({{$car->id}})</script>
